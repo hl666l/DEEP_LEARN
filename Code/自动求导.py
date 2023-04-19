@@ -19,6 +19,11 @@ C.backward()  # 执行反向传播，并计算梯度
 """
 print(a.grad, b.grad)
 
+with autograd.record():
+    E = 2 * (b.T * b)
+E.backward()
+print(b.grad)
+
 
 
 
